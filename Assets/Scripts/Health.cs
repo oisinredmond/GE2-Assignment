@@ -6,6 +6,7 @@ public class Health : MonoBehaviour
 {
     public int health = 40;
     public GameObject explosion;
+    public GameObject explode;
     private AudioSource audio;
 
     public Health()
@@ -27,6 +28,7 @@ public class Health : MonoBehaviour
     {
         if(gameObject.tag == "carrier")
         {
+            StartCoroutine(Explode());
             Destroy(gameObject, 5f);
         }
         else
@@ -49,5 +51,11 @@ public class Health : MonoBehaviour
 
             Destroy(transform.gameObject, 1f);
         }
+    }
+
+    IEnumerator Explode()
+    {
+        explode.SetActive(true);
+        yield return new WaitForSeconds(4);
     }
 }

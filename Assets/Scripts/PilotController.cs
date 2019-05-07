@@ -28,7 +28,7 @@ public class WanderState : State
                         owner.ChangeState(new CarrierAttackState());
                     }
                     else if (col.tag == "plane" && !col.transform.parent.GetComponent<StateMachine>().beingChased
-                        && dist < 300 && col.transform.parent != owner.enemy)
+                        && dist < 500 && col.transform.parent != owner.enemy)
                     {
                         col.transform.parent.GetComponent<StateMachine>().beingChased = true;
                         owner.enemy = col.transform.parent;

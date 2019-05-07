@@ -47,7 +47,7 @@ public class Shooting : MonoBehaviour
         }
         if(Physics.Raycast(guns[i].transform.position, guns[i].transform.forward, out hit, Mathf.Infinity, 1 << l))
         {
-            hit.collider.transform.parent.GetComponent<Health>().Hit(4);
+            hit.collider.transform.parent.GetComponent<Health>().Hit(5);
         }
     }
 }
